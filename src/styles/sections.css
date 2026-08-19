@@ -1,0 +1,173 @@
+/* Shared layout primitives reused across homepage / wholesale sections. */
+
+.section {
+  padding: var(--space-24) 0;
+}
+
+.section--tight {
+  padding: var(--space-16) 0;
+}
+
+.section--dark {
+  background: var(--magic-black);
+  color: var(--magic-wax-white);
+}
+
+.section--white-card {
+  background: var(--surface-page);
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: var(--container-narrow);
+}
+
+.section-head--center {
+  margin: 0 auto var(--space-16);
+  text-align: center;
+  align-items: center;
+}
+
+.section-head--center .eyebrow {
+  display: block;
+}
+
+.body-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+.body-copy--inverse {
+  color: var(--grey-300);
+}
+
+/* Two-column split. Children render in DOM order (= the intended mobile
+   reading order); on desktop the grid just lays the two DOM children out
+   left/right, so author DOM order = desired desktop left-to-right order too.
+   Only when desktop order must diverge from mobile order (Made in Popoyo:
+   image-first on mobile, copy-left on desktop) add --flip-desktop. */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.split--equal {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Same DOM order (copy first, media second) as the default .split, but
+   swaps which column is narrow/wide — used when the media column should
+   read as visually lighter than the copy column despite being second
+   in the grid. */
+.split--media-narrow {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+}
+
+.split__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.split__media img,
+.split__media .placeholder-block {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* A few source photos (AI-generated) carry a heavy warm/red vintage-filter
+   cast. Rather than replace them (no cleaner alternative exists for those
+   shots), tone the cast down slightly so they sit closer to the rest of
+   the site's natural, filmic-not-Instagram-filtered photography. */
+.photo-correct {
+  filter: saturate(0.8) contrast(1.03) brightness(1.02);
+}
+
+.fact-card {
+  background: var(--grey-100);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+}
+
+.split__media--stacked {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.split__media--stacked img:last-child,
+.split__media--stacked .placeholder-block:last-child {
+  max-width: 60%;
+}
+
+.fact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-family: var(--font-headline);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.fact-list li {
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.fact-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--magic-turquoise);
+}
+
+.price-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-family: var(--font-headline);
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+}
+
+.price-row small {
+  font-family: var(--font-headline);
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--text-muted);
+}
+
+@media (min-width: 900px) {
+  .split--flip-desktop > .split__copy {
+    order: 1;
+  }
+  .split--flip-desktop > .split__media {
+    order: 2;
+  }
+}
+
+@media (max-width: 899px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .section {
+    padding: var(--space-16) 0;
+  }
+}

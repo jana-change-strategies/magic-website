@@ -1,0 +1,102 @@
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/effects.css';
+
+:root {
+  --header-h: 72px;
+  --header-h-mobile: 64px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-headline);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  margin: 0;
+  text-transform: lowercase;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* anchor targets sit under the sticky header */
+section[id], div[id] {
+  scroll-margin-top: var(--header-h);
+}
+
+@media (max-width: 767px) {
+  section[id], div[id] {
+    scroll-margin-top: var(--header-h-mobile);
+  }
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Header is fixed/overlaid (so the homepage hero can sit under it
+   transparently); pages without a full-bleed hero need this to push
+   their first section clear of the header bar. */
+.page-offset {
+  padding-top: var(--header-h);
+}
+
+@media (max-width: 767px) {
+  .page-offset {
+    padding-top: var(--header-h-mobile);
+  }
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-headline);
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--text-secondary);
+}
+
+.eyebrow--inverse {
+  color: var(--grey-300);
+}

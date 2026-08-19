@@ -1,0 +1,26 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-8);
+}
+
+.contact-form__note {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.contact-form__note a {
+  color: var(--magic-turquoise-deep);
+}
+
+@media (max-width: 599px) {
+  .contact-form {
+    padding: var(--space-6);
+  }
+}

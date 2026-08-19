@@ -1,0 +1,60 @@
+/* magic* — Colour system
+ * "Five colours. Two gradients." (Design System V1)
+ * Physical palette = what boxes, bars and packaging are made in.
+ * Gradients are screen / digital only — never printed on product.
+ */
+:root {
+  /* ---- Brand palette (raw) ---- */
+  --magic-turquoise:      #3DBFBF;  /* box · primary accent */
+  --magic-turquoise-deep: #1A9A9A;  /* gradient end */
+  --magic-pink:           #FF3E7F;  /* box · primary accent */
+  --magic-coral:          #E8503A;  /* gradient end */
+  --magic-grey:           #4A4A4A;  /* box · neutral */
+  --magic-black:          #111111;  /* type · packaging */
+  --magic-wax-white:      #F5F4EE;  /* bar · base / brand paper */
+  --magic-white:          #FFFFFF;
+
+  /* ---- Neutral ramp (tints of the type black, for UI) ---- */
+  --grey-900: #111111;
+  --grey-800: #2A2A2A;
+  --grey-700: #4A4A4A;
+  --grey-600: #6B6B6B;
+  --grey-500: #8C8C8C;
+  --grey-400: #B0B0AC;
+  --grey-300: #D6D5CE;
+  --grey-200: #E7E6DF;
+  --grey-100: #F0EFE8;
+  --grey-050: #F5F4EE;
+
+  /* ---- Tints / washes (accents at low opacity, pre-mixed on wax-white) ---- */
+  --turquoise-wash: #E1F2F1;
+  --pink-wash:      #FFE4ED;
+
+  /* ---- Gradients (SCREEN ONLY) ---- */
+  --grad-turquoise: linear-gradient(135deg, #3DBFBF 0%, #1A9A9A 100%);  /* @kind color */
+  --grad-pink:      linear-gradient(135deg, #FF3E7F 0%, #E8503A 100%);  /* @kind color */
+  /* full-gradient social logo */
+  --grad-magic:     linear-gradient(120deg, #3DBFBF 0%, #FF3E7F 100%);  /* @kind color */
+
+  /* ---- Semantic aliases ---- */
+  --surface-page:    var(--magic-wax-white);
+  --surface-card:    var(--magic-white);
+  --surface-inverse: var(--magic-black);
+  --surface-sunk:    var(--grey-100);
+
+  --text-primary:   var(--magic-black);
+  --text-secondary: var(--grey-700);
+  --text-muted:     var(--grey-500);
+  --text-inverse:   var(--magic-wax-white);
+  --text-on-accent: var(--magic-white);
+
+  --accent:          var(--magic-turquoise);
+  --accent-2:        var(--magic-pink);
+  --accent-hover:    var(--magic-turquoise-deep);
+  --accent-2-hover:  var(--magic-coral);
+
+  --border-hairline: var(--grey-300);
+  --border-strong:   var(--magic-black);
+
+  --focus-ring: var(--magic-turquoise);
+}

@@ -1,0 +1,14 @@
+/* magic* — Webfonts
+ *
+ * The brand specifies Courier New (headlines / labels / all brand language)
+ * and Georgia (body). Neither ships as an open webfont, so we load the
+ * closest open substitutes from Google Fonts and keep the originals first
+ * in every stack so users with them installed see the real thing:
+ *
+ *   Courier New  →  Courier Prime  (screen-tuned Courier New clone)
+ *   Georgia      →  Gelasio        (metric-compatible Georgia clone)
+ *
+ * Substitution flagged in readme.md → VISUAL FOUNDATIONS. Swap these @import
+ * lines for self-hosted Courier New / Georgia woff2 if licensed copies exist.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');

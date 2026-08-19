@@ -1,0 +1,18 @@
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+}
+
+.steps__num {
+  font-family: var(--font-headline);
+  font-size: var(--text-xl);
+  color: var(--magic-turquoise);
+}
+
+@media (max-width: 899px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+}
