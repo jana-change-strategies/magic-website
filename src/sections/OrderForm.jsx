@@ -44,15 +44,14 @@ export function OrderForm() {
             />
             <Input label="name" name="name" required />
             <Input label="email" name="email" type="email" required />
-            <Textarea label="what would you like?" name="what_would_you_like" required rows={3} />
-            <Select
-              label="preferred colour"
-              name="preferred_colour"
-              placeholder="select one"
-              options={['turquoise', 'hot pink', 'dark grey', 'no colour preference']}
+            <Textarea
+              label="what would you like?"
+              name="what_would_you_like"
+              required
+              rows={4}
+              hint="let us know what you'd like — include colour and quantity if you already know them."
+              placeholder="e.g. two wax boxes in turquoise and one wax bar"
             />
-            <Input label="quantity" name="quantity" type="number" min="1" required />
-            <Textarea label="message" name="message" rows={4} />
             {state.errors && state.errors.getFormErrors().length > 0 && (
               <p className="contact-form__error">
                 something went wrong sending your request — please try again, or email us directly.
