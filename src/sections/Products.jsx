@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../components/core/Button';
 import { AccentBar } from '../components/AccentBar';
+import { ProductGallery } from '../components/ProductGallery';
 import './Products.css';
 
 function PriceBadge({ label, price }) {
@@ -53,10 +54,14 @@ export function Products() {
           mediaLeft
           eyebrow="THE WAX"
           media={
-            <img
-              className="photo-correct"
-              src="/images/Gemini_Generated_Image_hgd3zahgd3zahgd3.jpg"
-              alt="two white magic surf wax bars held at the beach in Popoyo"
+            <ProductGallery
+              images={[
+                {
+                  src: '/images/Gemini_Generated_Image_hgd3zahgd3zahgd3.jpg',
+                  alt: 'two white magic surf wax bars held at the beach in Popoyo',
+                  className: 'photo-correct',
+                },
+              ]}
             />
           }
           facts={
@@ -89,10 +94,14 @@ export function Products() {
           mediaLeft={false}
           eyebrow="THE BOX"
           media={
-            <img
-              src="/images/2.jpg"
-              alt="coral magic wax box open on the beach in Popoyo"
-              style={{ objectPosition: 'center' }}
+            <ProductGallery
+              images={[
+                {
+                  src: '/images/2.jpg',
+                  alt: 'coral magic wax box open on the beach in Popoyo',
+                  style: { objectPosition: 'center' },
+                },
+              ]}
             />
           }
           facts={
@@ -101,7 +110,7 @@ export function Products() {
               <li>magnetic closure</li>
               <li>integrated wax comb</li>
               <li>reusable</li>
-              <li>available in three official colours</li>
+              <li>available in turquoise, hot pink and dark grey</li>
               <li>wax sold separately or as a bundle</li>
             </>
           }
@@ -125,9 +134,13 @@ export function Products() {
           mediaLeft
           eyebrow="THE BACKUP"
           media={
-            <img
-              src="/images/65AF037B-D85C-4478-8E60-D94A77938F10.jpeg"
-              alt="hot pink emergency wax keychain attached to a belt loop"
+            <ProductGallery
+              images={[
+                {
+                  src: '/images/65AF037B-D85C-4478-8E60-D94A77938F10.jpeg',
+                  alt: 'hot pink emergency wax keychain attached to a belt loop',
+                },
+              ]}
             />
           }
           facts={
@@ -137,6 +150,7 @@ export function Products() {
               <li>integrated fin key</li>
               <li>refillable</li>
               <li>attach to keys, backpack or board bag</li>
+              <li>available in turquoise, hot pink and dark grey</li>
               <li>cube size: 34 × 34 × 20 mm</li>
             </>
           }
@@ -150,12 +164,14 @@ export function Products() {
             <p>The cube comes out of the case when you need it and can be replaced when it runs out. There is also a fin key built into the case, because that is another small thing you never seem to have when you need one.</p>
             <p>Useful, refillable and a pretty good little gift for anyone who regularly forgets their wax.</p>
           </div>
-          <p className="body-copy" style={{ fontSize: 'var(--text-sm)' }}>
-            four refill cubes contain the same total amount of wax as one full-size bar.
-          </p>
-          <div className="product-block__price product-price-row">
-            <PriceBadge label="incl. one cube" price="$15" />
-            <PriceBadge label="refill pack, four cubes" price="$6.50" />
+          <div className="product-block__price">
+            <div className="product-price-row">
+              <PriceBadge label="incl. one cube" price="$15" />
+              <PriceBadge label="refill pack, four cubes" price="$6.50*" />
+            </div>
+            <p className="product-price__footnote">
+              * four refill cubes contain the same total amount of wax as one full-size bar.
+            </p>
           </div>
           <Button href="/#order" style={{ alignSelf: 'flex-start' }}>order yours</Button>
         </ProductBlock>

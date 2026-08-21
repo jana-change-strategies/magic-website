@@ -28,16 +28,6 @@
   align-self: start;
 }
 
-/* Same landscape treatment as the rest of the site's product/section
-   images — this was lost when these images moved off .split__media. */
-.product-block__media img {
-  width: 100%;
-  display: block;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-}
-
 .product-block__copy {
   grid-area: copy;
   display: flex;
@@ -102,4 +92,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-6);
+}
+
+.product-price__footnote {
+  margin-top: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
 }

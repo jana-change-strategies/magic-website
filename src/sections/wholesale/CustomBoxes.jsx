@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '../../components/core/Button';
-import { CustomBoxPlaceholder } from '../../components/CustomBoxPlaceholder';
 import { AccentBar } from '../../components/AccentBar';
 
 export function CustomBoxes() {
@@ -8,8 +7,10 @@ export function CustomBoxes() {
     <section id="custom-boxes" className="section" style={{ background: 'var(--grey-050)' }}>
       <div className="container split">
         <div className="split__media">
-          {/* TODO: swap for Fabian's Kooks Café custom-logo box photo once delivered — do not substitute a generated image. */}
-          <CustomBoxPlaceholder />
+          <img
+            src="/images/kooks-cafe-custom-box.png"
+            alt="custom logo wax box made for Kooks Café in Popoyo"
+          />
         </div>
         <div className="split__copy">
           <span className="eyebrow">CUSTOM LOGO WAX BOXES</span>
