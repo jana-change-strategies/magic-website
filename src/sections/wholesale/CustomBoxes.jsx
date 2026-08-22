@@ -8,7 +8,7 @@ export function CustomBoxes() {
       <div className="container split">
         <div className="split__media">
           <img
-            src="/images/kooks-cafe-custom-box.png"
+            src="/images/kooks-cafe-custom-box.jpg"
             alt="custom logo wax box made for Kooks Café in Popoyo"
           />
         </div>

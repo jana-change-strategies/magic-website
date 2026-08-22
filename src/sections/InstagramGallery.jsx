@@ -7,7 +7,7 @@ const IMAGES = [
   { src: '/images/Gemini_Generated_Image_no9bugno9bugno9b.jpg', alt: 'surfer holding a dark grey magic wax box', correct: true },
   { src: '/images/DSC05933.jpg', alt: 'shore break moving over dark sand in Popoyo' },
   { src: '/images/DSC05965-2.jpg', alt: 'shore break moving over dark sand in Popoyo at sunset' },
-  { src: '/images/ElevenLabs_image_gpt-image-2_Close-up of sur_2026-06-27T08_11_01.png', alt: 'surfer applying wax to a surfboard' },
+  { src: '/images/elevenlabs-wax-application.jpg', alt: 'surfer applying wax to a surfboard' },
 ];
 
 export function InstagramGallery() {

@@ -1,39 +1,46 @@
-/* Per-product block: eyebrow spans full width, image top-aligns with the
-   H3 (both start row 2). Image + facts box are one flex column (own gap,
-   independent of the copy column's height) so a long copy column can't
-   stretch the row and blow out the gap between them. The copy column
-   stretches to match that combined height instead, and its price gets
-   pushed to the bottom via margin-top: auto so the two columns end flush. */
+/* Per-product block. Eyebrow sits directly above the H3 (its own row,
+   text-column width only); the image column has nothing in that row, so
+   image+price+button start one row down — aligned with the heading, not
+   the eyebrow. Below that, each side is ONE independent flex column —
+   image+price+button on the media side, heading+body+facts on the text
+   side — each sized only by its own content, so neither column's length
+   pushes the other's spacing around (sharing a grid row across columns
+   was tried and made the shorter column's content get shoved apart). */
 .product-block {
   display: grid;
   column-gap: var(--space-16);
-  row-gap: var(--space-6);
+  row-gap: var(--space-3);
   margin-bottom: var(--space-24);
   grid-template-columns: 1fr;
   grid-template-areas:
     'eyebrow'
-    'media'
-    'copy';
+    'media-col'
+    'text-col';
 }
 
 .product-block__eyebrow {
   grid-area: eyebrow;
 }
 
-.product-block__media {
-  grid-area: media;
+.product-block__media-col {
+  grid-area: media-col;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-6);
   align-self: start;
 }
 
-.product-block__copy {
-  grid-area: copy;
+.product-block__text-col {
+  grid-area: text-col;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  align-self: stretch;
+  gap: var(--space-4);
+  align-self: start;
+}
+
+.product-block__heading {
+  font-size: var(--text-xl);
+  margin: 0;
 }
 
 /* .fact-card (sections.css) sets padding, but .fact-list's own padding: 0
@@ -41,25 +48,22 @@
    specificity — pin it here explicitly so it actually applies. */
 .product-block__facts.fact-card {
   padding: var(--space-8);
-}
-
-.product-block__price {
-  margin-top: auto;
+  gap: var(--space-1);
 }
 
 @media (min-width: 900px) {
   .product-block--media-left {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     grid-template-areas:
-      'eyebrow eyebrow'
-      'media   copy';
+      '.         eyebrow'
+      'media-col text-col';
   }
 
   .product-block--media-right {
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
     grid-template-areas:
-      'eyebrow eyebrow'
-      'copy    media';
+      'eyebrow   .'
+      'text-col  media-col';
   }
 }
 

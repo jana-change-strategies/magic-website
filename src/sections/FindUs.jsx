@@ -29,18 +29,42 @@ export function FindUs() {
             </p>
           </div>
           <div className="split__copy">
-            <h3 style={{ fontSize: 'var(--text-lg)' }}>pick it up at kooks.</h3>
+            <h3 style={{ fontSize: 'var(--text-lg)' }}>pick it up nearby.</h3>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--text-secondary)' }}>
-              You can currently find magic* wax bars and wax boxes at Kooks Café. Colours depend on what is available in store.
+              find magic* at different locations in popoyo. colors depend on what's available in store.
             </p>
-            <a
-              href="https://www.instagram.com/kookscafe_popoyo/"
-              target="_blank"
-              rel="noreferrer"
-              style={{ fontFamily: 'var(--font-headline)', color: 'var(--magic-turquoise-deep)', fontSize: 'var(--text-sm)' }}
-            >
-              find kooks café
-            </a>
+            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+              <li>
+                <a
+                  href="https://www.instagram.com/kookscafe_popoyo/"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontFamily: 'var(--font-headline)', color: 'var(--magic-turquoise-deep)', fontSize: 'var(--text-sm)' }}
+                >
+                  Kooks Café
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/elchantepopoyo/"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontFamily: 'var(--font-headline)', color: 'var(--magic-turquoise-deep)', fontSize: 'var(--text-sm)' }}
+                >
+                  El Chante
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/p/Store-Hermanas-Miranda-100063727495936/"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontFamily: 'var(--font-headline)', color: 'var(--magic-turquoise-deep)', fontSize: 'var(--text-sm)' }}
+                >
+                  Hermanas Miranda
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
