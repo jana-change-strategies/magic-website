@@ -1,11 +1,10 @@
 /* Per-product block. Eyebrow sits directly above the H3 (its own row,
    text-column width only); the image column has nothing in that row, so
-   image+price+button start one row down — aligned with the heading, not
-   the eyebrow. Below that, each side is ONE independent flex column —
-   image+price+button on the media side, heading+body+facts on the text
-   side — each sized only by its own content, so neither column's length
-   pushes the other's spacing around (sharing a grid row across columns
-   was tried and made the shorter column's content get shoved apart). */
+   the image starts one row down — aligned with the heading, not the
+   eyebrow. Below that, the media side is just the image; the text side
+   is one flex column carrying heading, body copy, facts, price and
+   button in reading order — each side sized only by its own content, so
+   neither column's length pushes the other's spacing around. */
 .product-block {
   display: grid;
   column-gap: var(--space-16);
@@ -24,9 +23,6 @@
 
 .product-block__media-col {
   grid-area: media-col;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
   align-self: start;
 }
 
@@ -49,6 +45,13 @@
 .product-block__facts.fact-card {
   padding: var(--space-8);
   gap: var(--space-1);
+}
+
+/* Extra breathing room specifically between the facts box and the price
+   right after it — the column's base gap alone read as cramped there. */
+.product-block__text-col .product-price,
+.product-block__text-col .product-price-row {
+  margin-top: var(--space-4);
 }
 
 @media (min-width: 900px) {

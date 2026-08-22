@@ -22,13 +22,13 @@ function ProductBlock({ mediaLeft = true, eyebrow, heading, media, body, facts, 
       </div>
       <div className="product-block__media-col">
         {media}
-        {price}
-        {button}
       </div>
       <div className="product-block__text-col">
         <h3 className="product-block__heading">{heading}</h3>
         {body}
         <ul className="fact-list fact-card product-block__facts">{facts}</ul>
+        {price}
+        {button}
       </div>
     </div>
   );
