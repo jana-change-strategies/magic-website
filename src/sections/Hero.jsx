@@ -6,14 +6,11 @@ import './Hero.css';
 export function Hero() {
   return (
     <section className="hero">
-      <picture>
-        <source media="(max-width: 767px)" srcSet="/images/Gemini_Generated_Image_1a3nq31a3nq31a3n.jpg" />
-        <img
-          className="hero__img"
-          src="/images/Gemini_Generated_Image_pwqrpjpwqrpjpwqr.jpg"
-          alt="magic wax box and surf wax beside a surfboard in Popoyo"
-        />
-      </picture>
+      <img
+        className="hero__img"
+        src="/images/Gemini_Generated_Image_pwqrpjpwqrpjpwqr.jpg"
+        alt="magic wax box and surf wax beside a surfboard in Popoyo"
+      />
       <div className="hero__overlay" />
       <div className="hero__scrim" />
       <div className="hero__content">

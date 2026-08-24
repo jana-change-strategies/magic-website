@@ -72,9 +72,6 @@
 }
 
 @media (max-width: 767px) {
-  .hero__img {
-    object-position: center bottom;
-  }
   .hero__title {
     font-size: var(--text-3xl);
   }
